@@ -10,8 +10,8 @@ server <- function(input, output) {
         x <- input$input
         separator <- "\\."
         prefix <- "%"
-        xs <- str_trim(str_split(x, "\\.")[[1]])
-        paste0("%", xs, "\n")
+        xs <- str_trim(str_split(x, separator)[[1]])
+        paste(paste0(prefix, " ", xs, "\n"), collapse = "")
     })
 }
 
